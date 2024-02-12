@@ -13,7 +13,7 @@ terraform {
 # This provider is for us-east-1
 provider "aws" {
   # Extra Details
-  profile = "default" 
+  #profile = "default" 
   region = "us-east-1"
   access_key = "AKIA47CRXAJ552IQC7UB"
   secret_key = "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"
