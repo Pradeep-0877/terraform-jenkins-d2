@@ -1,5 +1,5 @@
 terraform {
-   required_version = "~> 1.5.5" # Most Commonly Used
+   required_version = "~> 1.7.1" # Most Commonly Used
 
    required_providers {
      aws = { # local provider name
