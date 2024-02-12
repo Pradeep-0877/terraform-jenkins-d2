@@ -6,6 +6,7 @@ pipeline {
         stage ('init') {
             steps {
                 sh "terraform init"
+                sh "ls -la ~/"
             }
         }
         stage ('Plan') {
