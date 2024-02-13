@@ -6,7 +6,7 @@ pipeline {
         choice (
             name: 'action',
             choices: 'apply\ndestroy'
-            desctiption: "Apply and destory the application Infrastructure"
+            description: "Apply and destory the application Infrastructure"
         )
     }
     stages {
