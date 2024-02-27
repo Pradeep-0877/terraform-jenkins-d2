@@ -1,18 +1,46 @@
 pipeline {
     agent any
+    parameters{
+        choice{
+            name: 'action'
+            choices: 'init\napply\ndestroy'
+            description: 'pls metion which do you wish to perform on terraform'
+
+        }
+    }
     stages {
         stage("init"){
+            when{
+                expression{
+                    params.action == 'init'
+                }
+            }
             steps{
                 sh "terraform init"
                 sh "ls -la"
             }
         }
         stage("apply"){
+            when{
+                expression{
+                    params.action == 'apply'
+                }
+            }
             steps{
                 sh "ls -la"
                 sh "terraform apply --auto-approve"
             }
 
+        }
+        stage("destroy"){
+            when{
+                expression{
+                    params.choice == 'destroy'
+                }
+            }
+            steps{
+                sh "terraform destroy --auto-approve"
+            }
         }
     }
 }
