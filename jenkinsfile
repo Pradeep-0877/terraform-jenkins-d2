@@ -2,8 +2,8 @@ pipeline {
     agent any
     parameters{
         choice (
-            name: 'action'
-            choices: 'init\napply\ndestroy'
+            name: 'action',
+            choices: 'init\napply\ndestroy',
             description: 'pls metion which do you wish to perform on terraform'
 
         )
