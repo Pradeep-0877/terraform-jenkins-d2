@@ -4,10 +4,12 @@ pipeline {
         stage("init"){
             steps{
                 sh "terraform init"
+                sh "la -la"
             }
         }
         stage("apply"){
             steps{
+                sh "ls -la"
                 sh "terraform apply --auto-approve"
             }
 
